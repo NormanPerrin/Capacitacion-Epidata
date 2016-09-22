@@ -7,9 +7,9 @@ public class CuentaSueldo extends Cuenta {
 	}
 	
 	@Override
-	public void retirar(double saldo) {
+	public void extraer(double saldo) {
 		if(this.getSaldo() >= saldo)
-			super.retirar(saldo);
+			super.extraer(saldo);
 	}
 
 }

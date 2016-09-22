@@ -2,6 +2,11 @@ package clienteTest;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import banco.Cliente;
@@ -11,12 +16,20 @@ import banco.CuentaSueldo;
 
 public class ClienteInitTest {
 	
-	private CuentaSueldo cuenta2 = new CuentaSueldo("Dolar", "Evil Corp");
-	private CuentaCorriente cuenta1 = new CuentaCorriente("Euro", "Epidata", 0);
-	private CuentaCorriente cuenta0 = new CuentaCorriente("Yen", "Lego", 0);
-	private Cuenta[] cuentas = new Cuenta[]{cuenta0, cuenta1, cuenta2}; // TODO
-	private Cliente cliente2 = new Cliente("Norman", 3, "Muro 231", cuentas);
-	private Cliente cliente1 = new Cliente("Juan", 5, "Florida 173", cuenta1);
+	private static CuentaCorriente cuenta1;
+	private static CuentaSueldo cuenta2;
+	private static Set<Cuenta> cuentas;
+	private static Cliente cliente2;
+	private static Cliente cliente1;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		cuenta1 = new CuentaCorriente("Euro", "Epidata", 0);
+		cuenta2 = new CuentaSueldo("Yen", "Lego");
+		cuentas = new HashSet<Cuenta>(Arrays.asList(cuenta2, cuenta1));
+		cliente2 = new Cliente("Norman", 3, "Muro 231", cuentas);
+		cliente1 = new Cliente("Juan", 5, "Florida 173", cuenta1);
+	}
 	
 	@Test
 	public void testNombre() {
@@ -33,14 +46,14 @@ public class ClienteInitTest {
 		assertEquals("Muro 231", cliente2.getDir());
 	}
 	
-	@Test
-	public void testCuenta() {
-		assertArrayEquals(new Cuenta[]{cuenta1}, cliente1.getCuentas()); // TODO
-	}
+//	@Test
+//	public void testUnaCuenta() {
+//		assertEquals(new HashSet<Cuenta>(Arrays.asList(cuenta2)), cliente1.getCuentas());
+//	}
 	
 	@Test
-	public void testCuentas() {
-		assertArrayEquals(cuentas, cliente2.getCuentas()); // TODO
+	public void testVariasCuenta() {
+		assertEquals(cuentas, cliente2.getCuentas());
 	}
 	
 }

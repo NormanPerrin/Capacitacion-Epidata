@@ -2,6 +2,7 @@ package cuentaTest;
 
 import static org.junit.Assert.*;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import banco.Cuenta;
@@ -10,8 +11,14 @@ import banco.CuentaSueldo;
 
 public class CuentaInitTest {
 	
-	private Cuenta cuenta2 = new CuentaSueldo("Peso Argentino", "Evil Corp"); // numero = 2; saldo = 0;
-	private Cuenta cuenta1 = new CuentaCorriente("Peso Argentino", "Evil Corp", 1000); // numero = 1; saldo = 0;
+	private static Cuenta cuenta2;
+	private static Cuenta cuenta1;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		cuenta1 = new CuentaCorriente("Peso Argentino", "Evil Corp", 1000);
+		cuenta2 = new CuentaSueldo("Peso Argentino", "Evil Corp");
+	}
 	
 	@Test
 	public void testNumeroCero() {
@@ -25,7 +32,7 @@ public class CuentaInitTest {
 	
 	@Test
 	public void testSaldoCero() {
-		assertEquals(0, cuenta1.getSaldo());
+		assertEquals(0, cuenta1.getSaldo(),0);
 	}
 	
 	@Test

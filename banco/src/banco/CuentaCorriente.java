@@ -15,9 +15,9 @@ public class CuentaCorriente extends Cuenta {
 	}
 	
 	@Override
-	public void retirar(double saldo) {
+	public void extraer(double saldo) {
 		if(this.getSaldo() + this.limite >= saldo)
-			super.retirar(saldo);
+			super.extraer(saldo);
 	}
 	
 }
