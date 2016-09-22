@@ -1,27 +1,26 @@
 package banco;
 
 import java.util.Arrays;
+import java.util.Set;
 
 abstract public class Cuenta {
 
-	protected long saldo = 0;
-	protected String moneda;
-	protected String empresa;
-	protected long numero;
-	protected Cliente[] clientes;
-	protected static long contador_cuentas = 0;
-	private static final int MAX_CLIENTES = 10;
+	private double saldo = 0; // TODO agregar get todos + métodos auxiliares
+	private String moneda;
+	private String empresa;
+	private long numero;
+	private Set<Cliente> clientes = new Set<Cliente>(); // TODO
+	private static long contador_cuentas = 0;
 	
 	public Cuenta(String moneda, String empresa) {
 		if(empresa.equals(null) || moneda.equals(null)) return;
-		this.clientes = new Cliente[MAX_CLIENTES];
 		this.moneda = moneda;
 		contador_cuentas++;
 		this.numero = contador_cuentas;
 	}
 	
 	// getters
-	public long getSaldo() {
+	public double getSaldo() {
 		System.out.println("#"+this.numero+": Ver saldo = "+this.saldo+"\n");
 		return this.saldo;
 	}
@@ -48,19 +47,19 @@ abstract public class Cuenta {
 		this.saldo += saldo;
 	}
 
-	public void retirar(long saldo) {
-		if(saldo < 0) return;
-		System.out.println("#"+this.numero+": Retirar = "+saldo+"\n");
+	public void retirar(double monto) {
+		if(monto < 0) return;
+		System.out.println("#"+this.numero+": Retirar = "+monto+"\n");
 		this.saldo -= saldo;
 	}
 
 	public void asignar(Cliente cliente) {
 		if(cliente.equals(null)) return;
 		System.out.println("#"+this.numero+": Asignar = "+cliente.getDni()+"\n");
-		this.clientes = new Cliente[]{cliente};
+		this.clientes.add(cliente);
 	}
 	
-	public void asignar(Cliente[] clientes) {
+	public void asignar(Set<Cliente> clientes) {
 		if(clientes.equals(null)) return;
 		System.out.println("#"+this.numero+": Asignar varios clientes\n");
 		this.clientes = clientes;
@@ -69,7 +68,7 @@ abstract public class Cuenta {
 	public boolean pertenece(Cliente cliente) {
 		if(cliente.equals(null)) return false;
 		System.out.println("#"+this.numero+": Pertenece = "+cliente.getDni()+"\n");
-		return (Arrays.asList(clientes).contains(cliente));
+		return (this.clientes.contains(cliente)); // TODO
 	}
 	
 }
