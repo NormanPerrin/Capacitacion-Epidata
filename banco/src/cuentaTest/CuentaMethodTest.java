@@ -41,22 +41,34 @@ public class CuentaMethodTest {
 	
 	@Test
 	public void testRetirarCero() {
-		cuenta0.extraer(0);
+		try {
+			cuenta0.extraer(0);
+		} catch (Exception e) {
+			fail();
+		}
 		assertEquals(0, cuenta0.getSaldo(),0);
 	}
 	
 	@Test
 	public void testRetirarN() {
-		cuenta0.depositar(10);
-		cuenta0.extraer(5);
+		try {
+			cuenta0.depositar(10);
+			cuenta0.extraer(5);
+		} catch (Exception e) {
+			fail();
+		}
 		assertEquals(5, cuenta0.getSaldo(),0);
 	}
 	
 	@Test
 	public void testRetirarNN() {
-		cuenta0.depositar(10);
-		cuenta0.extraer(2);
-		cuenta0.extraer(3);
+		try {
+			cuenta0.depositar(10);
+			cuenta0.extraer(2);
+			cuenta0.extraer(3);
+		} catch (Exception e) {
+			fail();
+		}
 		assertEquals(5, cuenta0.getSaldo(),0);
 	}
 	
