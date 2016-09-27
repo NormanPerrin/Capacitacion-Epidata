@@ -1,0 +1,19 @@
+Implementación #1:
+- Crear Cuenta, CuentaSueldo, CuentaCorriente, Cliente
+- Un cliente tiene siempre una cuenta
+- Un cliente tiene nombre, dni, direccion
+- Armar un jerarquia de cuentas adecuada
+- Las cuentas tienen saldo, un cliente, moneda (que no puede cambiar), numero, empresa
+- Giro en descubierto (solo las corrientes)
+- Permite retirar dinero mas alla del saldo, y hasta el giro en descubierto
+- Todas las clases deben sobreescribir el metodo equals
+- Las cuentas pueden extraer, depositar y verSaldo (pueden hacerlo como getSaldo)
+- Loggen las operaciones
+- La cuenta, sabe cuantas instancias hay via una variable estatica
+
+Implementación #2:
+- Clase Banco, tiene todas las cuentas
+- Cliente tiene varias cuentas
+- La cantidad de cuentas corrientes de un cliente no puede superar la mitad de la cantidad de cuentas que tenga
+- Clase Banco, tiene un metodo que dice cuanta plata hay en todas las cuentas
+- Clase Banco, tiene un metodo que dice cual es la cuenta con mayor saldo

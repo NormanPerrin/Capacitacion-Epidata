@@ -2,22 +2,25 @@ package banco;
 
 public class CuentaCorriente extends Cuenta {
 	
-	private long limite;
+	// state
+	private double limite;
 	
-	public CuentaCorriente(String moneda, String empresa, long limite) {
+	// constructor
+	public CuentaCorriente(String moneda, String empresa, double limite) {
 		super(moneda, empresa);
-		if(!(limite < 0) ) // TODO
+		if(!(limite < 0)) {
 			this.limite = limite;
+		}
 	}
-
-	public long getLimite() {
+	
+	// getters
+	public double getLimite() {
 		return this.limite;
 	}
 	
 	@Override
-	public void extraer(double saldo) {
-		if(this.getSaldo() + this.limite >= saldo)
-			super.extraer(saldo);
+	public double getSaldo() {
+		return super.getSaldo() + this.limite;
 	}
 	
 }
