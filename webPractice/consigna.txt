@@ -1,0 +1,10 @@
+Banco: nombre
+
+Clientes: 
+   (Solo aparecen los clientes) Cliente: Nombre-attributos... 
+   (si clickeas en un cliente, aparecen los detalles de sus cuentas) Cuentas: cuentas... 
+   Idem para las cuentas (thanks to: ivan.)
+
+Cuenta de saldo maximo: XXXX 
+Cliente a nombre de la cuenta: YYYY
+Saldo de la cuenta con menor saldo

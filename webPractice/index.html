@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Banco</title>
+  <style>.none {display: none;}</style>
+</head>
+<body>
+  <h1>Patagonia</h1>
+  <br>
+  <h2>Clientes</h2>
+  <ul>
+    <li><button onclick="mostrarInfoCliente('Norman')">Norman</button></li>
+    <li><button onclick="mostrarInfoCliente('Camila')">Camila</button></li>
+    <li><button onclick="mostrarInfoCliente('Sofia')">Sofia</button></li>
+  </ul>
+
+  <div class="info-cliente none norman">
+    <h3>Norman</h3>
+    <p>22</p>
+    <p>Cuentas</p>
+    <ul>
+      <li><button onclick="mostrarInfoCuenta('cuenta-saldo')">Cuenta Saldo</button></li>
+      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Caja Ahorro</button></li>
+    </ul>
+  </div>
+
+  <div class="info-cliente none camila">
+    <h3>Camila</h3>
+    <p>33</p>
+    <p>Cuentas</p>
+    <ul>
+      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Caja Ahorro</button></li>
+      <li><button onclick="mostrarInfoCuenta('cuenta-saldo')">Cuenta Saldo</button></li>
+    </ul>
+  </div>
+
+  <div class="info-cliente none sofia">
+    <h3>Sofia</h3>
+    <p>32</p>
+    <p>Cuentas</p>
+    <ul>
+      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Cuenta Saldo</button></li>
+      <li><button onclick="mostrarInfoCuenta('cuenta-corriente')">Cuenta Corriente</button></li>
+    </ul>
+  </div>
+
+  <div class="info-cuenta none norman cuenta-saldo">
+    <h3>Cuenta Saldo</h3>
+    <p>Numero: 7641782</p>
+    <p class="saldo">6222</p>
+    <p>Clientes:</p>
+    <ul>
+      <li>Norman</li>
+    </ul>
+  </div>
+
+  <div class="info-cuenta none norman camila caja-ahorro">
+    <h3>Caja ahorro</h3>
+    <p>Numero: 2578245</p>
+    <p class="saldo">5002</p>
+    <p>Clientes:</p>
+    <ul>
+      <li>Norman</li>
+      <li>Camila</li>
+    </ul>
+  </div>
+
+  <div class="info-cuenta none camila sofia cuenta-saldo">
+    <h3>Cuenta Saldo</h3>
+    <p>Numero: 1871456</p>
+    <p class="saldo">24000</p>
+    <p>Clientes:</p>
+    <ul>
+      <li>Camila</li>
+      <li>Sofia</li>
+    </ul>
+  </div>
+
+  <div class="info-cuenta none sofia cuenta-corriente">
+    <h3>Cuenta Corriente</h3>
+    <p>Numero: 1241426</p>
+    <p class="saldo">7600</p>
+    <p>Clientes:</p>
+    <ul>
+      <li>Sofia</li>
+    </ul>
+  </div>
+
+  <div class="extra-info">
+    <ul>
+      <li id="saldo-maximo"></li>
+      <li id="saldo-minimo"></li>
+    </ul>
+  </div>
+
+  <script src="cliente.js"></script>
+</body>
+</html>
