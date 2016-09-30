@@ -1,41 +1,44 @@
+function createObjInfo(_nombreClase, _cliente, _cuenta, _condicion) {
+  return {
+    nombreClase: _nombreClase,
+    cliente: _cliente,
+    cuenta: _cuenta,
+    condicion: _condicion
+  }
+}
+
+function mostrarInfoCliente(nombreCliente) {
+  let objInfo = createObjInfo('info-cliente', nombreCliente, null, function(tag) {
+    return (tag.classList.contains(this.cliente));
+  });
+  toggleInfo(objInfo);
+}
+
+function mostrarInfoCuenta(nombreCliente, nombreCuenta) {
+  let objInfo = createObjInfo('info-cuenta', nombreCliente, nombreCuenta, function(tag) {
+    return (tag.classList.contains(this.cliente) && tag.classList.contains(this.cuenta));
+  });
+  toggleInfo(objInfo);
+}
+
+function toggleInfo(objInfo) {
+  let lista = document.getElementsByClassName(objInfo.nombreClase);
+
+  for (let i = 0; i < lista.length; i++) {
+    if (objInfo.condicion(lista[i])) {
+      if (lista[i].classList.contains('none')) {
+        lista[i].classList.remove('none');
+      } else {
+        lista[i].classList.add('none');
+      }
+    }
+  }
+}
+
 (function() { // on load
   document.getElementById('saldo-maximo').innerHTML += calcularSaldoMaximo();
   document.getElementById('saldo-minimo').innerHTML += calcularSaldoMinimo();
 })();
-
-function mostrarInfoCliente(nombreCliente) {
-
-  let clientes = document.getElementsByClassName('info-cliente');
-
-  for (let i = 0; i < clientes.length; i++) {
-    if (clientes[i].classList.contains(nombreCliente)) {
-      if (clientes[i].classList.contains('none')) {
-        clientes[i].classList.remove('none');
-      } else {
-        clientes[i].classList.add('none');
-      }
-      break;
-    }
-  }
-
-}
-
-function mostrarInfoCuenta(nombreCliente, nombreCuenta) {
-
-  let cuentas = document.getElementsByClassName('info-cuenta');
-
-  for (let i = 0; i < cuentas.length; i++) {
-    if (cuentas[i].classList.contains(nombreCliente) && cuentas[i].classList.contains(nombreCuenta)) {
-      if (cuentas[i].classList.contains('none')) {
-        cuentas[i].classList.remove('none');
-      } else {
-        cuentas[i].classList.add('none');
-      }
-      break;
-    }
-  }
-
-}
 
 function calcularSaldoMaximo() {
 
