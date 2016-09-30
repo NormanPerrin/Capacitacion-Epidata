@@ -12,9 +12,9 @@
   <br>
   <h2>Clientes</h2>
   <ul>
-    <li><button onclick="mostrarInfoCliente('Norman')">Norman</button></li>
-    <li><button onclick="mostrarInfoCliente('Camila')">Camila</button></li>
-    <li><button onclick="mostrarInfoCliente('Sofia')">Sofia</button></li>
+    <li><button onclick="mostrarInfoCliente('norman')">Norman</button></li>
+    <li><button onclick="mostrarInfoCliente('camila')">Camila</button></li>
+    <li><button onclick="mostrarInfoCliente('sofia')">Sofia</button></li>
   </ul>
 
   <div class="info-cliente none norman">
@@ -22,8 +22,8 @@
     <p>22</p>
     <p>Cuentas</p>
     <ul>
-      <li><button onclick="mostrarInfoCuenta('cuenta-saldo')">Cuenta Saldo</button></li>
-      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Caja Ahorro</button></li>
+      <li><button onclick="mostrarInfoCuenta('norman', 'cuenta-saldo')">Cuenta Saldo</button></li>
+      <li><button onclick="mostrarInfoCuenta('norman', 'caja-ahorro')">Caja Ahorro</button></li>
     </ul>
   </div>
 
@@ -32,8 +32,8 @@
     <p>33</p>
     <p>Cuentas</p>
     <ul>
-      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Caja Ahorro</button></li>
-      <li><button onclick="mostrarInfoCuenta('cuenta-saldo')">Cuenta Saldo</button></li>
+      <li><button onclick="mostrarInfoCuenta('camila', 'caja-ahorro')">Caja Ahorro</button></li>
+      <li><button onclick="mostrarInfoCuenta('camila', 'cuenta-saldo')">Cuenta Saldo</button></li>
     </ul>
   </div>
 
@@ -42,10 +42,12 @@
     <p>32</p>
     <p>Cuentas</p>
     <ul>
-      <li><button onclick="mostrarInfoCuenta('caja-ahorro')">Cuenta Saldo</button></li>
-      <li><button onclick="mostrarInfoCuenta('cuenta-corriente')">Cuenta Corriente</button></li>
+      <li><button onclick="mostrarInfoCuenta('sofia', 'cuenta-saldo')">Cuenta Saldo</button></li>
+      <li><button onclick="mostrarInfoCuenta('sofia', 'cuenta-corriente')">Cuenta Corriente</button></li>
     </ul>
   </div>
+
+  <br>
 
   <div class="info-cuenta none norman cuenta-saldo">
     <h3>Cuenta Saldo</h3>
@@ -89,10 +91,12 @@
     </ul>
   </div>
 
+  <br>
+
   <div class="extra-info">
     <ul>
-      <li id="saldo-maximo"></li>
-      <li id="saldo-minimo"></li>
+      <li id="saldo-maximo">Saldo máximo: </li>
+      <li id="saldo-minimo">Saldo mínimo: </li>
     </ul>
   </div>
 
