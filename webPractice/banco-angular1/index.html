@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Banco</title>
+</head>
+<body ng-controller="Controlador">
+
+  <h1>Banco Patagonia</h1>
+
+  <!-- Lista de clientes -->
+  <div>
+    <ul>
+      <li ng-repeat="cli in clientes" ng-click="mostrarCliente(cli)">
+        {{cli.nombre}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Cliente seleccionada -->
+  <div ng-If="mostrarCli">
+    <h3>{{clienteMostrar.nombre}}</h3>
+    <p>{{clienteMostrar.edad}}</p>
+    <p>Cuentas</p>
+    <ul>
+      <li ng-repeat="cta in listaCuentas" ng-click="mostrarCuenta(cta)">
+        {{cta.nombre}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Cuenta seleccionada -->
+  <div ng-If="mostrarCta">
+    <h3>{{cuentaMostrar.nombre}}</h3>
+    <p>{{cuentaMostrar.numero}}</p>
+    <p>{{cuentaMostrar.saldo | currency}}</p>
+    <p>Clientes</p>
+    <ul>
+      <li ng-repeat="cli in cuentaMostrar.clientes">
+        {{cli}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Extra info -->
+  <div>
+    <p></p>
+    <p></p>
+  </div>
+
+  <script type="text/javascript" src="recursos/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

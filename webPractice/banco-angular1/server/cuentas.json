@@ -1,0 +1,8 @@
+{
+  cuentas: [
+    {nombre: 'Cuenta Saldo', numero: 7641782, saldo: 6222, clientes: ['Norman']},
+    {nombre: 'Caja Ahorro', numero: 2578245, saldo: 5002, clientes: ['Norman', 'Camila']},
+    {nombre: 'Cuenta Saldo', numero: 1871456, saldo: 24000, clientes: ['Camila', 'Sofia']},
+    {nombre: 'Cuenta Corriente', numero: 1241426, saldo: 7600, clientes: ['Sofia']}
+  ]
+}

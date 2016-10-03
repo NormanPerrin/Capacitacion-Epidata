@@ -1,0 +1,8 @@
+banco-angular:
+    - es Angular 2.
+    - Para compilar el código y correrlo: npm install, npm start.
+    - Si no compila bien puede que haya que borrar la carpeta Node_Modules y volver a hacer npm install
+    - se me complicó y hay algunos errores de "undefined" comentados.
+
+banco-angular1:
+    - quería hacerlo con un server en Node pero hay que configurar algo, así que lo dejé comentado. Algo de Cross-Domain

@@ -1,0 +1,7 @@
+{
+  clientes: [
+    {nombre: 'Norman', edad: 22},
+    {nombre: 'Camila', edad: 33},
+    {nombre: 'Sofia', edad: 32}
+  ]
+}
